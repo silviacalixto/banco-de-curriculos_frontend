@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Sans-serif';   
+    text-align: center;
+}
+
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to right, #000000, #e74c3c);
+}
+
+a{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+header ul{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+header ul li{
+    padding: 5px;
+    color:#fff;
+    
+}
+
+form{
+    display:inline-block;
+    text-align: center;
+    align-items: center;
+    font-size: 80%;
+    padding: 1px;
+    background-color:sandybrown;
+    border-radius: 10px 10px 10px 10px;
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+    padding: 5px;
+}
+h3{
+    font-size: 20px;
+    margin-top: 10px;
+}
+h4{
+    font-size: 20px;
+    text-align: center;
+    font-style: italic;
+    padding: 5px; 
+}
+
+.flexContainerLinha{
+    display: flex;
+    justify-content: left;
+}
+
+.flexContainerLinha div{
+    margin: 5px;
+}
+
+.botao{
+    width: 20%;
+    padding: 5px 10px;
+    background: linear-gradient(to right, #000000, #e74c3c); 
+    background-size: 200% 100%;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;   
+    
+}
+
+
+
