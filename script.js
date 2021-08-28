@@ -23,7 +23,26 @@ form.addEventListener('submit', (event) => {
     habilitacao: form.elements['habilitacao'];
 });
 
-axios.post('http://localhost:5000/register');
+try {
+    const usuario = fetch('http://localhost:5000/register', {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+    });
+    if(usuario.status === 200) {
+        console.log(form);
+        alert('Deu certo!')
+    }
+}
+    catch (error) {
+        alert('Deu errado!');
+        console.log(form);
+    }
+
+// axios.post('http://localhost:5000/register');
 
 const limparFormulario = (endereco) => {
     document.getElementById('endereco').value = '';
