@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-   <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     <title>.:Recrutamento JobsNET:.</title>
 </head>
 
@@ -33,7 +32,8 @@
         <h2>Banco de Currículos</h2>
         <h4>Venha fazer o seu cadastro!</h4><br>
 
-    <form action="/register" method="post" id="register" autocomplete="off">
+    <form name="formulario" id="container" onchange="Formulario()">
+
         <h3>DADOS PESSOAIS</h3><br>
 
         <div class="flexContainerLinha">
@@ -160,8 +160,9 @@
             </select>
             </div>
         </div>
-
-        <button class="botao" type="submit" id="submit" onsubmit="">Enviar</button>
+        <div>
+        <button type="submit" id="enviar" onclick="criarCandidato()">Enviar</button>
+        </div>
 
     </form>
 </main>

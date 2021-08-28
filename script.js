@@ -1,49 +1,3 @@
-'use strict';
-
-const form = document.getElementById('submit');
-
-form.addEventListener('submit', (event) => {
-    nome: form.elements['nome'];
-    cargo: form.elements['cargo'];
-    dataNascimento: form.elements['dataNascimento'];
-    estadoCivil: form.elements['estadoCivil'];
-    sexo: form.elements['sexo'];
-    cep: form.elements['cep'];
-    endereco: form.elements['endereco'];
-    numero: form.elements['numero'];
-    bairro: form.elements['bairro'];
-    cidade: form.elements['cidade'];
-    estado: form.elements['estado'];
-    celular: form.elements['celular'];
-    telefoneFixo: form.elements['telefoneFixo'];
-    email: form.elements['email'];
-    identidade: form.elements['identidade'];
-    cpf: form.elements['cpf'];
-    possuiVeiculo: form.elements['possuiVeiculo'];
-    habilitacao: form.elements['habilitacao'];
-});
-
-try {
-    const usuario = fetch('http://localhost:5000/register', {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(form)
-    });
-    if(usuario.status === 200) {
-        console.log(form);
-        alert('Deu certo!')
-    }
-}
-    catch (error) {
-        alert('Deu errado!');
-        console.log(form);
-    }
-
-// axios.post('http://localhost:5000/register');
-
 const limparFormulario = (endereco) => {
     document.getElementById('endereco').value = '';
     document.getElementById('bairro').value = '';
@@ -86,3 +40,50 @@ const pesquisarCep = async() => {
 }
 
 document.getElementById('cep').addEventListener('focusout', pesquisarCep);
+
+const Formulario = () => {
+
+    let form = {
+        nome: document.getElementById('nome').value,
+        cargo: document.getElementById('cargo').value,
+        dataNascimento: document.getElementById('dataNascimento').value,
+        estadoCivil: document.getElementById('estadoCivil').value,
+        sexo: document.getElementById('sexo').value,
+        cep: document.getElementById('cep').value,
+        endereco: document.getElementById('endereco').value,
+        numero: document.getElementById('numero').value,
+        bairro: document.getElementById('bairro').value,
+        cidade: document.getElementById('cidade').value,
+        estado: document.getElementById('estado').value,
+        celular: document.getElementById('celular').value,
+        telefoneFixo: document.getElementById('telefoneFixo').value,
+        email: document.getElementById('email').value,
+        identidade: document.getElementById('identidade').value,
+        cpf: document.getElementById('cpf').value,
+        possuiVeiculo: document.getElementById('possuiVeiculo').value,
+        habilitacao: document.getElementById('habilitacao').value,
+    };
+    console.log(form);
+    return form 
+}
+
+const criarCandidato = async(candidato) => {
+    try {
+        const usuario = fetch('http://localhost:5000/register', {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Formulario())
+        });
+        if(usuario.status === 200) {
+            alert('Deu certo!')
+        }
+    }
+    catch (error) {
+        alert('Deu errado!');
+    }
+}
+
+
