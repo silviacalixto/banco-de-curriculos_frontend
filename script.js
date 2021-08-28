@@ -23,7 +23,7 @@ form.addEventListener('submit', (event) => {
     habilitacao: form.elements['habilitacao'];
 });
 
-axios.post(localhost:5000/);
+axios.post('http://localhost:5000');
 
 const limparFormulario = (endereco) => {
     document.getElementById('endereco').value = '';
