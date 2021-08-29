@@ -75,6 +75,7 @@ const criarCandidato = async(candidato) => {
             },
             body: JSON.stringify(Formulario())
         });
+        alert('verificando cadastro');
         if(requisicao.status === 200) {
             alert('Cadastro efetuado com sucesso!');
         }
