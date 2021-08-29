@@ -42,7 +42,6 @@ const pesquisarCep = async() => {
 document.getElementById('cep').addEventListener('focusout', pesquisarCep);
 
 const Formulario = () => {
-
     let form = {
         nome: document.getElementById('nome').value,
         cargo: document.getElementById('cargo').value,
@@ -64,12 +63,11 @@ const Formulario = () => {
         habilitacao: document.getElementById('habilitacao').value,
     };
     console.log(form);
-    return form 
+    return form;
 }
 
 const criarCandidato = async(candidato) => {
-    try {
-        const usuario = fetch('https://bancodecurriculos-backend.herokuapp.com/register', {
+        const requisicao = await fetch('https://bancodecurriculos-backend.herokuapp.com/register', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -77,13 +75,18 @@ const criarCandidato = async(candidato) => {
             },
             body: JSON.stringify(Formulario())
         });
-        if(usuario.status === 200) {
-            alert('Deu certo!')
+        if(requisicao.status === 200) {
+            alert('Cadastro efetuado com sucesso!');
         }
-    }
-    catch (error) {
-        alert('Deu errado!');
-    }
+        else if (requisicao.status === 500){
+            alert('Já temos essas informações em nosso banco.');
+        }
+        else {
+             alert('Seu cadastro não pôde ser realizado');
+         }
 }
+
+
+
 
 
