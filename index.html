@@ -35,7 +35,7 @@
         <h2>Banco de Currículos</h2>
         <h4>Venha fazer o seu cadastro!</h4><br>
 
-    <form name="formulario" id="container">
+    <form name="formulario" id="container" onsubmit="criarCandidato()"; return false;>
 
         <h3>DADOS PESSOAIS</h3><br>
 
@@ -164,7 +164,7 @@
             </div>
         </div>
         <div>
-        <button type="submit" id="enviar" onclick="criarCandidato()">Enviar</button>
+        <button type="submit" id="enviar" class = "botao">Enviar</button>
         </div>
 
     </form>
