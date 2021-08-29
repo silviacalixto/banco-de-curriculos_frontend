@@ -99,6 +99,35 @@ footer p a {
     font-style:oblique;
 }
 
+@media only screen and (max-width: 480px){
+    header{
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+    }
+    img{
+        max-width: 60%;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h4{
+        font-size: 15px;
+    }
+    footer{
+        font-size: 13px;
+    }
+   #container{
+        align-items: center;
+        max-width: 100%
+   }
+   .flexContainerLinha{
+       align-items: center;
+       max-width: 50%;
+       flex-wrap:wrap-reverse;
+       padding: 5px;
+   }
+}
 
 
 
