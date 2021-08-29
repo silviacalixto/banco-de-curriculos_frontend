@@ -85,6 +85,7 @@ const criarCandidato = async(candidato) => {
         else {
              alert('Seu cadastro não pôde ser realizado');
          }
+         location.reload();
 }
 
 
